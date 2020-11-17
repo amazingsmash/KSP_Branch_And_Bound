@@ -12,7 +12,9 @@ example_csv = """3 10
 example_items = [Item(index=0, value=45, weight=5),
                  Item(index=1, value=48, weight=8),
                  Item(index=2, value=35, weight=3)]
+example_capacity = 10
 example_value = 80
+example_taken = [1, 0, 1]
 
 
 def from_data_to_items(input_data):
@@ -92,4 +94,8 @@ def solve_branch_and_bound(items, capacity):
 
 
 if __name__ == '__main__':
-    pass
+
+    value, taken = solve_branch_and_bound(example_items, example_capacity)
+
+    print(value)
+    print(taken)
